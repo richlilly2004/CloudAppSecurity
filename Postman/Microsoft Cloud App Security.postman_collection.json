@@ -1,0 +1,548 @@
+{
+	"info": {
+		"_postman_id": "8616f006-6a6c-4a94-984a-d3bde9d67971",
+		"name": "Microsoft Cloud App Security",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cloud Discovery",
+			"item": [
+				{
+					"name": "Generate block script",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{MCAS_APIToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://netrixonline.us.portal.cloudappsecurity.com/api/discovery_block_scripts/?format=104&type=banned",
+							"protocol": "https",
+							"host": [
+								"netrixonline",
+								"us",
+								"portal",
+								"cloudappsecurity",
+								"com"
+							],
+							"path": [
+								"api",
+								"discovery_block_scripts",
+								""
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "104"
+								},
+								{
+									"key": "type",
+									"value": "banned"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Data Enhancement",
+			"item": [
+				{
+					"name": "Create IP address range",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{MCAS_APIToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\":\"RichHomeTest\",\r\n  \"category\":6,\r\n  \"organization\":\"Comcast\",\r\n  \"subnets\":[\r\n    \"73.50.18.201/32\"\r\n  ],\r\n  \"tags\":[\r\n    \"Home\"\r\n  ]\r\n}"
+						},
+						"url": {
+							"raw": "https://netrixonline.us.portal.cloudappsecurity.com/cas/api/v1/subnet/create_rule/",
+							"protocol": "https",
+							"host": [
+								"netrixonline",
+								"us",
+								"portal",
+								"cloudappsecurity",
+								"com"
+							],
+							"path": [
+								"cas",
+								"api",
+								"v1",
+								"subnet",
+								"create_rule",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Activities",
+			"item": [
+				{
+					"name": "List activities",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{MCAS_APIToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://netrixonline.us.portal.cloudappsecurity.com/api/v1/activities",
+							"protocol": "https",
+							"host": [
+								"netrixonline",
+								"us",
+								"portal",
+								"cloudappsecurity",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"activities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch activity",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{MCAS_APIToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://netrixonline.us.portal.cloudappsecurity.com/api/v1/activities/148b1b11-f76f-47a8-aae4-888a21dd43b5_17000271_1592334950114_20940",
+							"protocol": "https",
+							"host": [
+								"netrixonline",
+								"us",
+								"portal",
+								"cloudappsecurity",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"activities",
+								"148b1b11-f76f-47a8-aae4-888a21dd43b5_17000271_1592334950114_20940"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Alerts",
+			"item": [
+				{
+					"name": "List alerts",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{MCAS_APIToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://netrixonline.us.portal.cloudappsecurity.com/api/v1/alerts",
+							"protocol": "https",
+							"host": [
+								"netrixonline",
+								"us",
+								"portal",
+								"cloudappsecurity",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"alerts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch alert",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{MCAS_APIToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://netrixonline.us.portal.cloudappsecurity.com/api/v1/alerts/5eeab7883ee7f13b12514aa6",
+							"protocol": "https",
+							"host": [
+								"netrixonline",
+								"us",
+								"portal",
+								"cloudappsecurity",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"alerts",
+								"5eeab7883ee7f13b12514aa6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dismiss alert",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{MCAS_APIToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://netrixonline.us.portal.cloudappsecurity.com/api/v1/alerts/5eeab7883ee7f13b12514aa6/dismiss/",
+							"protocol": "https",
+							"host": [
+								"netrixonline",
+								"us",
+								"portal",
+								"cloudappsecurity",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"alerts",
+								"5eeab7883ee7f13b12514aa6",
+								"dismiss",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Entities",
+			"item": [
+				{
+					"name": "List entities",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{MCAS_APIToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://netrixonline.us.portal.cloudappsecurity.com/api/v1/entities",
+							"protocol": "https",
+							"host": [
+								"netrixonline",
+								"us",
+								"portal",
+								"cloudappsecurity",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"entities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch entity",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{MCAS_APIToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://netrixonline.us.portal.cloudappsecurity.com/api/v1/entities/5d1125799eddcc280728dbb2",
+							"protocol": "https",
+							"host": [
+								"netrixonline",
+								"us",
+								"portal",
+								"cloudappsecurity",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"entities",
+								"5d1125799eddcc280728dbb2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "54364b4f-e5a2-4a16-958c-07856eb50c68",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "b21f3bb6-822d-4c99-856d-619994b77029",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Files",
+			"item": [
+				{
+					"name": "List Files",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{MCAS_APIToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://netrixonline.us.portal.cloudappsecurity.com/api/v1/files/",
+							"protocol": "https",
+							"host": [
+								"netrixonline",
+								"us",
+								"portal",
+								"cloudappsecurity",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"files",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch entity",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{MCAS_APIToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://netrixonline.us.portal.cloudappsecurity.com/api/v1/files/8dd706b3-ca50-4af6-9766-d3cc48d8b634|df1c6fde-1acf-4406-bcff-61b0f611d39b",
+							"protocol": "https",
+							"host": [
+								"netrixonline",
+								"us",
+								"portal",
+								"cloudappsecurity",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"files",
+								"8dd706b3-ca50-4af6-9766-d3cc48d8b634|df1c6fde-1acf-4406-bcff-61b0f611d39b"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "ed37e1da-7f19-4a66-912c-ccd05c8d547d",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "f592bac1-505c-45e0-b120-1c34566d70f8",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
